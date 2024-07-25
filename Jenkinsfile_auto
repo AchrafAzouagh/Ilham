@@ -1,0 +1,252 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Starting build ms service .'
+            }
+        }
+
+        stage('mym-exp-app-car') {
+            when { changeset "*/mym-exp-app-car/**"}
+            steps {
+                echo "====mym-exp-app-car===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-exp-app-car']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-exp-app-me') {
+            when { changeset "*/mym-exp-app-me/**"}
+            steps {
+                echo "====mym-exp-app-me===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-exp-app-me']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-exp-app-shop') {
+            when { changeset "*/mym-exp-app-shop/**"}
+            steps {
+                echo "====mym-exp-app-shop===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-exp-app-shop']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-exp-app-cms') {
+            when { changeset "*/mym-exp-app-cms/**"}
+            steps {
+                echo "====mym-exp-app-cms===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-exp-app-cms']], wait: false, propagate: false
+            }
+        }
+
+        
+        stage('mym-exp-app-settings') {
+            when { changeset "*/mym-exp-app-settings/**"}
+            steps {
+                echo "====mym-exp-app-settings===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-exp-app-settings']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-exp-com-session') {
+            when { changeset "*/mym-exp-com-session/**"}
+            steps {
+                echo "====mym-exp-com-session===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-exp-com-session']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-proc-assistance') {
+            when { changeset "*/mym-proc-assistance/**"}
+            steps {
+                echo "====mym-proc-assistance===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-proc-assistance']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-proc-tmts') {
+            when { changeset "*/mym-proc-tmts/**"}
+            steps {
+                echo "====mym-proc-tmts===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-proc-tmts']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-proc-web-radio') {
+            when { changeset "*/mym-proc-web-radio/**"}
+            steps {
+                echo "====mym-proc-web-radio===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-proc-web-radio']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-arc-europe') {
+            when { changeset "*/mym-sys-arc-europe/**"}
+            steps {
+                echo "====mym-sys-arc-europe===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-arc-europe']], wait: false, propagate: false
+            }
+        }
+        stage('mym-sys-corvet-data') {
+            when { changeset "*/mym-sys-corvet-data/**"}
+            steps {
+                echo "====mym-sys-corvet-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-corvet-data']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-cvs-data') {
+            when { changeset "*/mym-sys-cvs-data/**"}
+            steps {
+                echo "====mym-sys-cvs-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-cvs-data']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-dimbr-data') {
+            when { changeset "*/mym-sys-dimbr-data/**"}
+            steps {
+                echo "====mym-sys-dimbr-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-dimbr-data']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-ima-data') {
+            when { changeset "*/mym-sys-ima-data/**"}
+            steps {
+                echo "====mym-sys-ima-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-ima-data']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-sys-web-radio') {
+            when { changeset "*/mym-sys-web-radio/**"}
+            steps {
+                echo "====mym-sys-web-radio===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-web-radio']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-ocr-aws') {
+            when { changeset "*/mym-sys-ocr-aws/**"}
+            steps {
+                echo "====mym-sys-ocr-aws===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-ocr-aws']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-sams-data') {
+            when { changeset "*/mym-sys-sams-data/**"}
+            steps {
+                echo "====mym-sys-sams-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-sams-data']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-mapcare') {
+            when { changeset "*/mym-sys-mapcare/**"}
+            steps {
+                echo "====mym-sys-sams-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-mapcare']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-sys-mapupdate') {
+            when { changeset "*/mym-sys-mapupdate/**"}
+            steps {
+                echo "====mym-sys-mapupdate===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-mapupdate']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-ereca') {
+            when { changeset "*/mym-sys-ereca/**"}
+            steps {
+                echo "====mym-sys-sams-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-ereca']], wait: false, propagate: false
+            }
+        }
+
+        stage('mym-sys-advisor') {
+            when { changeset "*/mym-sys-advisor/**"}
+            steps {
+                echo "====mym-sys-sams-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-advisor']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-sys-c-first') {
+            when { changeset "*/mym-sys-c-first/**"}
+            steps {
+                echo "====mym-sys-c-first===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-c-first']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-sys-prdv') {
+            when { changeset "*/mym-sys-prdv/**"}
+            steps {
+                echo "====mym-sys-prdv===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-prdv']], wait: false, propagate: false
+            }
+        }
+        
+         stage('mym-sys-stat') {
+            when { changeset "*/mym-sys-stat/**"}
+            steps {
+                echo "====mym-sys-stat===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-stat']], wait: false, propagate: false
+
+             }   
+        }
+
+         stage('mym-sys-user-data') {
+            when { changeset "*/mym-sys-user-data/**"}
+            steps {
+                echo "====mym-sys-user-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-user-data']], wait: false, propagate: false
+            }
+        }
+        
+         stage('mym-sys-tomtom') {
+            when { changeset "*/mym-sys-tomtom/**"}
+            steps {
+                echo "====mym-sys-tomtom===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-tomtom']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-sys-request-log') {
+            when { changeset "*/mym-sys-request-log/**"}
+            steps {
+                echo "====mym-sys-request-log===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-request-log']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-sys-opencell') {
+            when { changeset "*/mym-sys-opencell/**"}
+            steps {
+                echo "====mym-sys-opencell===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-opencell']], wait: false, propagate: false
+            }
+        }
+
+       stage('mym-sys-raia') {
+            when { changeset "*/mym-sys-raia/**"}
+            steps {
+                echo "====mym-sys-raia===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-raia']], wait: false, propagate: false
+            }
+        }
+        
+        stage('mym-sys-services-data') {
+            when { changeset "*/mym-sys-services-data/**"}
+            steps {
+                echo "====mym-sys-services-data===="
+                build job: '/APP/MYMARQUE_V2/MYMAPP_MYMARQUEV2_INTEG/develop', parameters: [[$class: 'StringParameterValue', name: 'appName', value: 'mym-sys-services-data']], wait: false, propagate: false
+            }
+        }
+        
+    }
+}
